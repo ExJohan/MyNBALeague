@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background">
+
+    <data>
+        <variable  name="viewModel" type="johan.com.mynbaleague.ItemListViewModel"/>
+        <variable name="item" type="johan.com.mynbaleague.ItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.screenTitle}"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <Button android:onClick="@{() -> viewModel.clear()}"
+                android:textColor="#ff0e0c3a"
+                android:text="  Reinitialiser la liste  "
+                android:background="@drawable/buttonshape"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+            </Button>
+
+            <Button android:onClick="goToCarte"
+                android:textColor="#ff0e0c3a"
+                android:text="  Voir la carte  "
+                android:background="@drawable/buttonshape"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+            </Button>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.textMakeTeam}"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.textNewTeam}" />
+        </LinearLayout>
+        <Button android:onClick="@{() -> viewModel.onClickGenerate()}"
+            android:layout_marginTop="15dp"
+            android:textColor="#ff0e0c3a"
+            android:background="@drawable/buttonshape"
+            android:text="Créer"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+        </Button>
+
+
+        <android.support.v7.widget.RecyclerView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/data_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:itemsSource="@{viewModel.items}"
+            app:itemTemplate="@{@layout/item_cell}"
+            app:onItemTapped="@{() -> viewModel.onItemTapped(item)}" />
+    </LinearLayout>
+
+</layout>

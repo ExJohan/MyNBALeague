@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="johan.com.mynbaleague.MainViewModel">
+        </variable>
+
+    </data>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:text="@{viewModel.title}"
+            android:textSize="40dp"/>
+
+
+        <Button
+            android:textColor="#ff0e0c3a"
+            android:background="@drawable/buttonshape"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="goToItemList"
+            android:layout_gravity="center"
+            android:text="@{viewModel.buttonText}" />
+        <LinearLayout
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/Colorblack"
+                android:textSize="20dp"
+                android:text="Votre adresse mail : "/>
+            <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                android:id="@+id/themail"
+            android:text="@={viewModel.mailExample}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/Colorblack"
+                android:textSize="20dp"
+                android:text="Votre mot de passe : " />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text="exemple"
+                android:id="@+id/thepassword"/>
+        </LinearLayout>
+
+        <Button
+            android:textColor="#ff0e0c3a"
+            android:background="@drawable/buttonshape"
+            android:layout_marginTop="45dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="createpassword"
+            android:layout_gravity="center"
+            android:text="Créer un compte" />
+
+        <Button
+            android:textColor="#ff0e0c3a"
+            android:background="@drawable/buttonshape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:onClick="signIn"
+            android:text="Se connecter" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=""
+            android:id="@+id/theEtat"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+</layout>

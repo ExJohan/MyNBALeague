@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "771092201375",
+    "firebase_url": "https://my-nba-league.firebaseio.com",
+    "project_id": "my-nba-league",
+    "storage_bucket": "my-nba-league.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771092201375:android:86f9eecde5532b00",
+        "android_client_info": {
+          "package_name": "johan.com.mynbaleague"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "771092201375-dkvfu3cfh6od8ptp1i6jsp326la2m3ck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMEqqfxN8GSxFVb-Gl9T1ZGAyCw4vA1wQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
